@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Green Corner Plant Shop</title>
+  <style>
+    :root {
+      --bg: #f3f6ee;
+      --ink: #1f2a1c;
+      --muted: #55634f;
+      --leaf: #2f6b3a;
+      --soil: #8a5a3c;
+      --card: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.7;
+    }
+    a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid var(--leaf); outline-offset: 2px; }
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 6vw; border-bottom: 1px solid #d5dccb;
+    }
+    header strong { font-size: 1.3rem; color: var(--leaf); }
+    nav a { margin-left: 1.5rem; color: var(--ink); text-decoration: none; }
+    nav a:hover { color: var(--leaf); text-decoration: underline; }
+    .hero { padding: 6rem 6vw 4rem; max-width: 52rem; }
+    .hero h1 { font-size: clamp(2.2rem, 6vw, 4rem); line-height: 1.1; margin-bottom: 1rem; }
+    .hero p { color: var(--muted); font-size: 1.15rem; max-width: 36rem; margin-bottom: 2rem; }
+    .btn {
+      display: inline-block; background: var(--leaf); color: #fff;
+      padding: .8rem 1.6rem; border-radius: 6px; text-decoration: none; border: 0; font: inherit; cursor: pointer;
+    }
+    .btn:hover { background: #245530; }
+    section { padding: 3rem 6vw; }
+    section h2 { margin-bottom: 1.5rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+    .plant { background: var(--card); border-radius: 10px; padding: 1.5rem; border: 1px solid #d5dccb; }
+    .plant .emoji { font-size: 2.5rem; }
+    .plant h3 { margin: .5rem 0 .2rem; }
+    .plant p { color: var(--muted); font-size: .95rem; }
+    .price { color: var(--soil); font-weight: bold; margin-top: .6rem; }
+    form { display: grid; gap: 1rem; max-width: 28rem; }
+    label { display: grid; gap: .3rem; }
+    input, textarea { padding: .7rem; border: 1px solid #b9c4ad; border-radius: 6px; font: inherit; }
+    footer { padding: 2rem 6vw; color: var(--muted); border-top: 1px solid #d5dccb; font-size: .9rem; }
+    @media (max-width: 520px) { header { flex-direction: column; gap: .6rem; } nav a { margin: 0 .7rem; } }
+  </style>
+</head>
+<body>
+  <header>
+    <strong>Green Corner</strong>
+    <nav>
+      <a href="#plants">Plants</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <h1>Houseplants that are happy to live with you.</h1>
+      <p>Hardy, healthy plants for bright windows and dim corners, delivered with simple care instructions.</p>
+      <a class="btn" href="#plants">Browse plants</a>
+    </div>
+
+    <section id="plants">
+      <h2>Popular this week</h2>
+      <div class="grid">
+        <article class="plant">
+          <div class="emoji" aria-hidden="true">🌿</div>
+          <h3>Snake Plant</h3>
+          <p>Tolerates low light and missed waterings.</p>
+          <div class="price">₹499</div>
+        </article>
+        <article class="plant">
+          <div class="emoji" aria-hidden="true">🪴</div>
+          <h3>Money Plant</h3>
+          <p>Grows fast in water or soil, indoors or out.</p>
+          <div class="price">₹299</div>
+        </article>
+        <article class="plant">
+          <div class="emoji" aria-hidden="true">🌵</div>
+          <h3>Jade Succulent</h3>
+          <p>Needs bright light and water only every two weeks.</p>
+          <div class="price">₹399</div>
+        </article>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About us</h2>
+      <p style="max-width: 40rem;">We are a small nursery that grows every plant we sell. Each order includes a care card so your plant has the best start in its new home.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Send us a message</h2>
+      <form onsubmit="event.preventDefault(); alert('Thanks! We will reply soon.');">
+        <label>Name <input type="text" required></label>
+        <label>Email <input type="email" required></label>
+        <label>Message <textarea rows="4" required></textarea></label>
+        <button class="btn" type="submit">Send message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>© 2026 Green Corner Plant Shop. All rights reserved.</footer>
+</body>
+</html>
